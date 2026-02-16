@@ -1,0 +1,8 @@
+{
+  "company_name": "Farmbora Ltd",
+  "industry": "Agriculture",
+  "main_problem": "Manual order processing takes 3 days and leads to frequent errors, causing customer complaints and revenue loss",
+  "current_process": "Orders come in via WhatsApp, staff manually enters them into Excel spreadsheets, then emails invoices one by one. Follow-ups are tracked on paper.",
+  "desired_automation": "Automated order intake from WhatsApp, auto-generated invoices, real-time inventory sync with their warehouse system, and automated payment reminders",
+  "estimated_monthly_customers": 500
+}
