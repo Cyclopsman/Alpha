@@ -1,0 +1,206 @@
+/* ── DOXA Brand Tokens ─────────────────────────────────────────────── */
+:root {
+  --navy:        #0B1035;
+  --navy-light:  #131A4A;
+  --navy-mid:    #1C2563;
+  --teal:        #2DD4BF;
+  --teal-dark:   #14B8A6;
+  --blue:        #3B82F6;
+  --slate:       #94A3B8;
+  --slate-dark:  #64748B;
+  --white:       #FFFFFF;
+  --off-white:   #F1F5F9;
+  --border:      #1E293B;
+  --danger:      #EF4444;
+  --success:     #22C55E;
+  --radius:      8px;
+  --radius-lg:   12px;
+  --shadow:      0 4px 24px rgba(0,0,0,0.25);
+  --font:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Reset ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  color: var(--white);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 3px; }
+
+/* ── Utilities ────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.card {
+  background: var(--navy-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(45,212,191,0.12);
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--navy);
+}
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+}
+.btn-outline:hover {
+  background: rgba(45,212,191,0.08);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--slate);
+}
+.btn-ghost:hover { color: var(--white); }
+
+/* ── Form elements ────────────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--slate-dark);
+}
+
+/* ── Spinner ──────────────────────────────────────────────────────── */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(11,16,53,0.3);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Markdown preview ─────────────────────────────────────────────── */
+.md-preview h1 { font-size: 1.6rem; margin: 24px 0 12px; }
+.md-preview h2 { font-size: 1.25rem; margin: 20px 0 10px; color: var(--teal); }
+.md-preview h3 { font-size: 1.05rem; margin: 16px 0 8px; }
+.md-preview p  { margin: 8px 0; line-height: 1.65; color: var(--slate); }
+.md-preview strong { color: var(--white); }
+.md-preview hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.md-preview ul, .md-preview ol { margin: 8px 0 8px 24px; color: var(--slate); }
+.md-preview li { margin: 4px 0; line-height: 1.6; }
+.md-preview blockquote {
+  border-left: 3px solid var(--teal);
+  padding: 12px 16px;
+  margin: 12px 0;
+  background: rgba(45,212,191,0.05);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.md-preview blockquote p { color: var(--off-white); }
+.md-preview pre {
+  background: var(--navy);
+  padding: 16px;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.md-preview code { font-family: 'Fira Code', 'Consolas', monospace; }
+.md-preview table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.md-preview th, .md-preview td {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.md-preview th { background: var(--navy-mid); color: var(--teal); font-weight: 600; }
+.md-preview td { color: var(--slate); }
